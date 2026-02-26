@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- DaisyUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet" type="text/css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-[#111111] sm:w-full">
+   <h1 class="text-4xl text-blue-600 font-bold ml-36 pt-10">Job Application Tracker</h1>
+   
+    <section class="flex justify-around py-16 pl-4 mx-auto sm:mx-8">
+         
+        <div class="border border-gray-600 shadow-2xl bg-black py-4 pl-4 xl:pr-40 rounded-md sm:pr-20">
+            <p class="text-white">TOTAL</p>
+            <span id="totalCards" class="text-white"></span>
+        </div>
+        
+        <div class="bg-black py-4 pl-4 pr-10 border border-gray-600 shadow-2xl rounded-md sm:pr-20">
+            <p class="text-white">INTERVIEW</p>
+            <SPAN id="interviewCount" class="text-green-400 ">0</SPAN>
+        </div>
+        <div class="bg-black py-4 pl-4 pr-40 border border-gray-600 shadow-2xl rounded-md sm:pr-20">
+            <p class="text-white">REJECTED</p>
+            <span id="rejectedCount"  class="text-red-400 ">0</span>
+        </div>
+    </section >
+
+ </section>
+        <div class="flex justify-between text-white pl-36">
+<h2 class="text-white font-bold text-4xl">Avaliable Jobs</h2>
+<span id="totalJobs" class="pr-14"> Jobs</span>
+</div>
+
+<div class="flex space-x-4 pt-10 pl-36">
+    <button onclick="togglestyle('total')" id="total" class=" bg-[blue] text-white border border-gray-500 rounded-md px-4 py-2 ">All</button>
+    <button onclick="togglestyle('interviewCountBtn')" id="interviewCountBtn" class="bg-black text-white border border-gray-500 shadow-2xl rounded-md px-4 py-2">Interview</button>
+    <button onclick="togglestyle('rejectedCountBtn')" id="rejectedCountBtn" class="bg-black text-white border border-gray-500 shadow-2xl rounded-md px-4 py-2">Rejected</button>
+</div>
+
+<!-- filter section -->
+ <section id="filter-section" class="hidden"></section>
+    <section id="filter-section2" class="hidden"></section>
+
+<!-- all cards -->
+    <header id="main">
+    <section id="allCards" class="space-y-4 pt-20 xl:w-full pl-16">
+       <ul class="bg-black py-4 border shadow-md border-gray-600 rounded-2xl flex justify-around mx-20 sm:pl-10 ">
+  
+  <li class="space-y-4 pr-20">
+      <div class="mobile text-white text-3xl font-bold">Mobile First Corp</div>
+      <div class="react font-semibold opacity-60  text-white">React Native Developer</div>
+  
+    <p class="salery text-white opacity-60">Remote • Full-time • $1300,000-$175,000</p>
+<div class="outBtn"></div>
+
+      <div class="pharagargh font-semibold opacity-80  text-white">Build cross-platform mobile applications using React
+         Native.Work on products used by millions fo users worldwide.</div>
+   
+   <button class="green  btn btn-success btn-outline">INTERVIEW</button>
+<button class="red  btn btn-error btn-outline ml-2">REJECTED</button>
+</li>
+    <button id="delete-btn" class="fa-solid fa-trash btn btn-gosht border border-gray-500 bg-black p-4 text-white sm:mr-6" ></button>
+</ul>
+       <ul id="" class="bg-black py-4 border shadow-md border-gray-600 rounded-2xl  flex justify-around mx-20 sm:pl-10 ">
+  
+  <li class="space-y-4 pr-20">
+      <div class="mobile text-white text-3xl font-bold">WebFlow Agency</div>
+      <div class="react font-semibold opacity-60  text-white">Web Disigner & Developer</div>
+
+    <p class="salery text-white opacity-60">Los Angeies,CA • Part-time • $80,00,000-$120,000</p>
+<div class="outBtn"></div>
+
+      <div class="pharagargh font-semibold opacity-80  text-white">Create stunning web experiences for high-peofile clients.
+         Must have porfolio and experience with modeern web disign trends.</div>
+   
+   <button class="green btn btn-success btn-outline">INTERVIEW</button>
+<button class="red btn btn-error btn-outline ml-2">REJECTED</button>
+</li>
+    <button id="delete-btn" class="fa-solid fa-trash btn btn-gosht border border-gray-500 bg-black p-4 text-white sm:mr-6" ></button>
+  
+</ul>
+      
+       <ul  class="bg-black py-4 border shadow-md border-gray-600 rounded-2xl  flex justify-around mx-20 sm:pl-10 ">
+  
+  <li class="space-y-4 pr-20">
+      <div class="mobile text-white text-3xl font-bold">CloudScale Systems</div>
+      <div class="react font-semibold opacity-60  text-white">Full Stack Developer</div>
+   
+    <p class="salery text-white opacity-60">Remote • Full-time • $130,000-$150,000</p>
+   <div class="outBtn"></div>
+   
+      <div class="pharagargh font-semibold opacity-80  text-white">Develop scalable web applications
+         using React and Node.js. Collaborate with cross-functional teams to deliver high-quality software solutions.</div>
+
+   <button class="green btn btn-success btn-outline">INTERVIEW</button>
+<button class="red btn btn-error btn-outline ml-2">REJECTED</button>
+</li>
+    <button id="delete-btn" class="fa-solid fa-trash btn btn-gosht border border-gray-500 bg-black p-4 text-white sm:mr-6" ></button>
+  
+</ul>
+       <ul class="bg-black py-4 border shadow-md border-gray-600 rounded-2xl  flex justify-around mx-20 sm:pl-10 ">
+  
+  <li class="space-y-4 pr-20">
+      <div class="mobile text-white text-3xl font-bold">TechNova Solutions</div>
+      <div class="react font-semibold opacity-60  text-white">Frontend Developer</div>
+ 
+    <p class="salery text-white opacity-60">Remote • Full-time • $90,000-$115,000</p>
+   <div class="outBtn"></div>
+   
+      <div class="pharagargh font-semibold opacity-80  text-white">Build responsive and interactive
+         web applications using React and Tailwind CSS. Work closely with UI/UX designers to implement pixel-perfect designs.</div>
+    
+   <button class="green btn btn-success btn-outline">INTERVIEW</button>
+<button class="red btn btn-error btn-outline ml-2">REJECTED</button>
+</li>
+    <button id="delete-btn" class="fa-solid fa-trash btn btn-gosht border border-gray-500 bg-black p-4 text-white sm:mr-6" ></button>
+     
+</ul>
+       <ul class="bg-black py-4 border shadow-md border-gray-600 rounded-2xl  flex justify-around mx-20 sm:pl-10 ">
+  
+  <li class="space-y-4 pr-20">
+      <div class="mobile text-white text-3xl font-bold">ByteWave Technologies</div>
+      <div class="react font-semibold opacity-60  text-white">Backend Developer</div>
+    
+    <p class="salery text-white opacity-60">On-site • Full-time • $105,000-$135,000</p>
+   <div class="outBtn"></div>
+ 
+      <div class="pharagargh font-semibold opacity-80  text-white">Develop secure REST APIs
+         using Node.js and Express. Manage databases and optimize server performance for high traffic systems.</div>
+  
+   <button class="green btn btn-success btn-outline">INTERVIEW</button>
+<button class="red btn btn-error btn-outline ml-2">REJECTED</button>
+</li>
+    <button id="delete-btn" class="fa-solid fa-trash btn btn-gosht border border-gray-500 bg-black p-4 text-white sm:mr-6" ></button>
+     
+</ul>
+       <ul class="bg-black py-4 border shadow-md border-gray-600 rounded-2xl  flex justify-around mx-20 sm:pl-10 ">
+  
+  <li class="space-y-4 pr-20">
+      <div class="mobile text-white text-3xl font-bold">SkyNet Digital</div>
+      <div class="react font-semibold opacity-60  text-white">Mobile App Developer</div>
+
+    <p class="salery text-white opacity-60">Hybrid • Contract • $95,000-$125,000</p>
+   <div class="outBtn"></div>
+  
+      <div class="pharagargh font-semibold opacity-80  text-white">Create cross-platform mobile
+         applications using React Native. Ensure smooth performance and seamless user experience.</div>
+
+   <button class="green btn btn-success btn-outline">INTERVIEW</button>
+<button class="red btn btn-error btn-outline ml-2">REJECTED</button>
+</li>
+    <button id="delete-btn" class="fa-solid fa-trash btn btn-gosht border border-gray-500 bg-black p-4 text-white sm:mr-6" ></button>
+  
+</ul>
+       <ul class="bg-black py-4 border shadow-md border-gray-600 rounded-2xl  flex justify-around mx-20 sm:pl-10 ">
+  
+  <li class="space-y-4 pr-20">
+      <div class="mobile text-white text-3xl font-bold">NextGen Labs</div>
+      <div class="react font-semibold opacity-60  text-white">DevOps Engineer</div>
+
+    <p class="salery text-white opacity-60">Remote • Full-time • $120,000-$155,000</p>
+   <div class="outBtn"></div>
+
+      <div class="pharagargh font-semibold opacity-80  text-white">Manage CI/CD pipelines 
+        and cloud infrastructure using AWS. Automate deployment processes and monitor system reliability.</div>
+
+   <button class="green btn btn-success btn-outline">INTERVIEW</button>
+<button class="red btn btn-error btn-outline ml-2">REJECTED</button>
+</li>
+    <button id="delete-btn" class="fa-solid fa-trash btn btn-gosht border border-gray-500 bg-black p-4 text-white sm:mr-6" ></button>
+  
+</ul>
+       <ul class="bg-black py-4 border shadow-md border-gray-600 rounded-2xl  flex justify-around mx-20  sm:pl-10 ">
+  
+  <li class="space-y-4 pr-20">
+      <div class="mobile text-white text-3xl font-bold">CodeSphere Innovations</div>
+      <div class="react font-semibold opacity-60  text-white">UI/UX Designer</div>
+ 
+    <p class="salery text-white opacity-60">Remote • Full-time • $85,000-$110,000</p>
+    <div class="outBtn"></div>
+   
+      <div class="pharagargh font-semibold opacity-80  text-white">Design modern and intuitive user 
+        interfaces for web and mobile platforms. Conduct user research and improve usability.</div>
+  
+   <button class="green btn btn-success btn-outline">INTERVIEW</button>
+<button class="red btn btn-error btn-outline ml-2">REJECTED</button>
+</li>
+    <button id="delete-btn" class="fa-solid fa-trash btn btn-gosht border border-gray-500 bg-black p-4 text-white sm:mr-6" ></button>
+ 
+</ul>
+</header>
+   
+    <!-- no jobs available -->
+     <section id="emty" class="hero min-h-screen hero-content text-center block pt-16" >
+      <div class="border border-gray-600 shadow-2xl px-20 py-10  rounded-md">
+        <div class="pl-[5rem]">
+      <img src="./jobs.png" alt="">
+      </div>
+        <h3 class="text-white pt-4">NO jobs available </h3>
+          <p class="text-white opacity-60 pt-6">Check back for new job opportunities</p>
+     </div>
+     </section>
+    <script src="./index3.js"></script>
+</body>
+</html>
