@@ -43,13 +43,15 @@ document.addEventListener('click', function (event) {
   let target = event.target;
   if (target.classList.contains('btn1')) {
     let card = target.closest('emty');
+    card.remove();
    }
-   card.remove();
+   
 
   if(target.classList.contains('btn2')) {
   let card2 = target.closest('emty');
+  card2.remove();
 }
-card2.remove();
+
 })
   
 function calculated(){
@@ -85,6 +87,7 @@ selected.classList.add('bg-blue-600', 'text-white');
   if(id == 'interviewCountBtn'){
     allCards.classList.add('hidden');
     filter.classList.remove('hidden');
+render();
 
   } else if(id == 'total'){
     allCards.classList.remove('hidden'); 
