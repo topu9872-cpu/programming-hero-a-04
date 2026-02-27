@@ -146,7 +146,6 @@ if(!exists){
 
 }
 
-
 interviewList=interviewList.filter(item=> item.mobile !== cardInfo.mobile);
 console.log(rejectedList);
 render();
@@ -190,7 +189,6 @@ for (let data of  interviewList){
    filter.appendChild(div);
 }
 }
-
 
 function rended(){
 filter.innerHTML='';
