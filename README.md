@@ -66,7 +66,7 @@ document.createElement('any tag name that we want').
 ### 4. What is Event Delegation in JavaScript? Why is it useful?
 
 ### 5. What is the difference between preventDefault() and stopPropagation() methods?
-
+stopPropagation()  that stop the bubbling
 ---
 
 
