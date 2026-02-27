@@ -31,25 +31,21 @@ document.addEventListener('click', function (event) {
   let target = event.target;
   if (target.classList.contains('fa-trash')) {
     let card = target.closest('ul');
-    card.remove();
-
+   
     }
       calculated();
 });
 
 // emty section
-
 document.addEventListener('click', function (event) {
   let target = event.target;
   if (target.classList.contains('btn1')) {
-    let card = target.closest('emty');
-    card.remove();
+    let emty = target.closest('emty');
+    emty.remove();
    }
-   
-
   if(target.classList.contains('btn2')) {
-  let card2 = target.closest('emty');
-  card2.remove();
+  let emty2 = target.closest('emty');
+  emty2.remove();
 }
 
 })
