@@ -37,18 +37,6 @@ document.addEventListener('click', function (event) {
       calculated();
 });
 
-// emty section
-document.addEventListener('click', function (event) {
-  let target = event.target;
-  if (target.classList.contains('btn1')) {
-    let card = target.closest('empty');
-    card.remove();
-   }
-  if(target.classList.contains('btn2')) {
-  let card2 = target.closest('empty');
-  card2.remove();
-}
-})
   
 function calculated(){
    totalCards.innerText= allCards.children.length;
