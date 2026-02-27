@@ -23,7 +23,7 @@ let totalJobs= document.getElementById('totalJobs');
 let btn1 = document.getElementById('btn1');
 let btn12 = document.getElementById('btn2');
 // emty 
-let emty =document.getElementById('emty');
+let empty =document.getElementById('empty');
 
 // delete section
 
@@ -31,7 +31,8 @@ document.addEventListener('click', function (event) {
   let target = event.target;
   if (target.classList.contains('fa-trash')) {
     let card = target.closest('ul');
-   
+    card.remove();
+
     }
       calculated();
 });
@@ -40,14 +41,13 @@ document.addEventListener('click', function (event) {
 document.addEventListener('click', function (event) {
   let target = event.target;
   if (target.classList.contains('btn1')) {
-    let emty = target.closest('emty');
-    emty.remove();
+    let card = target.closest('empty');
+    card.remove();
    }
   if(target.classList.contains('btn2')) {
-  let emty2 = target.closest('emty');
-  emty2.remove();
+  let card2 = target.closest('empty');
+  card2.remove();
 }
-
 })
   
 function calculated(){
@@ -83,13 +83,12 @@ selected.classList.add('bg-blue-600', 'text-white');
   if(id == 'interviewCountBtn'){
     allCards.classList.add('hidden');
     filter.classList.remove('hidden');
-render();
+render()
 
   } else if(id == 'total'){
     allCards.classList.remove('hidden'); 
     filter.classList.add('hidden'); 
-    //  this line of emty
-  emty.classList.add('hidden')
+empty.classList.add('hidden')
 
   } else if(id == 'rejectedCountBtn'){
     allCards.classList.add('hidden');
@@ -163,7 +162,12 @@ calculated();
 
 function render(){
 filter.innerHTML='';
-
+if(interviewList.length=== 0){
+  empty.classList.remove('hidden');
+}
+else{
+   empty.classList.add('hidden');
+}
 for (let data of  interviewList){
   // console.log(data)
   let div =document.createElement('div');
@@ -197,6 +201,12 @@ for (let data of  interviewList){
 function rended(){
 filter.innerHTML='';
 console.log(rejectedList);
+if(rejectedList.length=== 0){
+  empty.classList.remove('hidden');
+}
+else{
+   empty.classList.add('hidden');
+}
 
 for (let rejected of rejectedList){
   console.log(rejected)
