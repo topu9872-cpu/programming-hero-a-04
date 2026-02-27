@@ -55,7 +55,6 @@ function calculated(){
    totalJobs.innerText= allCards.children.length + ' Jobs';
    interviewCount.innerText= interviewList.length;
     rejectedCount.innerText= rejectedList.length;
-  
 }
  calculated();
 
@@ -77,7 +76,6 @@ currentStatus = id;
 selected.classList.remove('bg-black');
 selected.classList.add('bg-blue-600', 'text-white');
 
-
 // toggle section
 
   if(id == 'interviewCountBtn'){
@@ -88,16 +86,14 @@ render()
   } else if(id == 'total'){
     allCards.classList.remove('hidden'); 
     filter.classList.add('hidden'); 
-empty.classList.add('hidden')
+  empty.classList.add('hidden');
 
   } else if(id == 'rejectedCountBtn'){
     allCards.classList.add('hidden');
     filter.classList.remove('hidden');
-  //  
  rended();
 }
 }
-
 
 mainContainer.addEventListener('click',function(event){
 if(event.target.classList.contains('green')){
@@ -140,7 +136,6 @@ let cardInfo={mobile,
   salery,
   pharagargh,
 }
-
 
 let exists =rejectedList.find(item=> item.mobile === cardInfo.mobile);
 
@@ -193,7 +188,6 @@ for (let data of  interviewList){
 </ul>
   `;
    filter.appendChild(div);
- 
 }
 }
 
